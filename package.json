@@ -47,6 +47,7 @@
   "keywords": ["react", "hook", "scroll", "MutationObserver"],
   "module": "dist/use-eventual-scroll.esm.js",
   "devDependencies": {
+    "@testing-library/react": "^10.0.4",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "husky": "^4.2.5",
