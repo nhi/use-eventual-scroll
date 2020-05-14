@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react';
 
 /** Scrolls to an element after that element is added to the DOM */
 const useEventualScroll = (
@@ -10,25 +10,24 @@ const useEventualScroll = (
   container?: null | HTMLElement
 ) => {
   React.useEffect(() => {
-    if (!location.hash || container === null) {
-      return
+    if (!window.location.hash || container === null) {
+      return;
     }
 
-    const _container = container || document
+    const _container = container || document;
 
     const observer = new MutationObserver(() => {
-      const element = _container.querySelector(location.hash)
+      const element = _container.querySelector(window.location.hash);
       if (element) {
-        element.scrollIntoView()
-        observer.disconnect()
+        element.scrollIntoView();
+        observer.disconnect();
       }
-    })
+    });
 
-    observer.observe(_container, { childList: true, subtree: true })
+    observer.observe(_container, { childList: true, subtree: true });
 
-    return observer.disconnect
+    return observer.disconnect;
+  }, [container]);
+};
 
-  }, [container])
-}
-
-export default useEventualScroll
+export default useEventualScroll;
