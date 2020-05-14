@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -44,7 +44,12 @@
   "bugs": {
     "url": "https://github.com/nhi/use-eventual-scroll/issues"
   },
-  "keywords": ["react", "hook", "scroll", "MutationObserver"],
+  "keywords": [
+    "react",
+    "hook",
+    "scroll",
+    "MutationObserver"
+  ],
   "module": "dist/use-eventual-scroll.esm.js",
   "devDependencies": {
     "@testing-library/react": "^10.0.4",

@@ -54,7 +54,7 @@ const App = () => {
       setLoading(true)
     }
     someAsyncOperation()
-  })
+  }, [])
 
   /**
    * By only adding this one line,
