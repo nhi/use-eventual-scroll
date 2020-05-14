@@ -7,7 +7,7 @@
 
 ---
 
-
+![CI][ci-badge]
 [![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends] [![Total downloads][total-downloads]][total-downloads] [![MIT License][license-badge]][license] [![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
 
 [![Watch on GitHub][github-watch-badge]][github-watch] [![Star on GitHub][github-star-badge]][github-star]
@@ -96,6 +96,7 @@ const App = () => {
 
 MIT
 
+[ci-badge]: https://github.com/nhi/use-eventual-scroll/workflows/CI/badge.svg?branch=master
 [version-badge]:
   https://img.shields.io/npm/v/use-eventual-scroll.svg?style=flat-square
 [package]: https://www.npmjs.com/package/use-eventual-scroll

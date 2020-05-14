@@ -40,3 +40,7 @@ jobs:
         run: yarn build
         env:
           CI: true
+      - name: Release
+        run: yarn release
+        env:
+          CI: true
