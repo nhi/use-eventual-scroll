@@ -21,13 +21,13 @@ const useEventualScroll = (
       const element = _container.querySelector(hash);
       if (element) {
         element.scrollIntoView();
-        observer.disconnect();
+        observer?.disconnect();
       }
     });
 
     observer.observe(_container, { childList: true, subtree: true });
 
-    return observer.disconnect;
+    return () => observer?.disconnect();
   }, [container]);
 };
 
