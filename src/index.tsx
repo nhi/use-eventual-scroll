@@ -17,7 +17,7 @@ const useEventualScroll = (
     const _container = container || document;
 
     const observer = new MutationObserver(() => {
-      const hash = window.location.hash.replace(/\?.*/, "")
+      const hash = window.location.hash.replace(/\?.*/, '');
       const element = _container.querySelector(hash);
       if (element) {
         element.scrollIntoView();
@@ -27,7 +27,7 @@ const useEventualScroll = (
 
     observer.observe(_container, { childList: true, subtree: true });
 
-    return () => observer?.disconnect();
+    return () => observer?.disconnect();
   }, [container]);
 };
 
