@@ -40,6 +40,7 @@ jobs:
         run: yarn build
         env:
           CI: true
+
       - name: Release
         run: npx semantic-release
         env:
