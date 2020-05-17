@@ -17,7 +17,8 @@ const useEventualScroll = (
     const _container = container || document;
 
     const observer = new MutationObserver(() => {
-      const element = _container.querySelector(window.location.hash);
+      const hash = window.location.hash.replace(/\?.*/, "")
+      const element = _container.querySelector(hash);
       if (element) {
         element.scrollIntoView();
         observer.disconnect();
