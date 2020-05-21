@@ -7,7 +7,19 @@ const useEventualScroll = (
    * The closer it is to that element, the less Mutations are observed
    * by MutationObserver. If not defined, document will be used.
    */
-  container?: null | HTMLElement
+  container?: null | HTMLElement,
+  /**
+   * Defaults to `true`.
+   * If set to `false`, the MutationObserver
+   * will stop listening for DOM changes
+   * after the first scroll has been executed.
+   *
+   * Usually, you can skip this.
+   * Although, if the element you are scrolling to
+   * moves in subsequent renders, you have to ensure
+   * that it stays in view, by constantly scrolling to it.
+   */
+  disconnectAfterScroll: boolean = true
 ) => {
   React.useEffect(() => {
     if (!window.location.hash || container === null) {
@@ -21,14 +33,18 @@ const useEventualScroll = (
       const element = _container.querySelector(hash);
       if (element) {
         element.scrollIntoView();
-        observer?.disconnect();
+        if (disconnectAfterScroll) {
+          observer?.disconnect();
+        }
       }
     });
 
     observer.observe(_container, { childList: true, subtree: true });
 
-    return () => observer?.disconnect();
-  }, [container]);
+    return () => {
+      observer?.disconnect();
+    };
+  }, [container, disconnectAfterScroll]);
 };
 
 export default useEventualScroll;
